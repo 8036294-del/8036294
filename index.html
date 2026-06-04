@@ -1262,7 +1262,7 @@
           </div>
           <h1 class="hero-title">
             <span class="hero-title-top">电商视觉设计作品集</span>
-            <span class="hero-title-bottom">三维表现、详情页包装、主图海报与 AI 视觉提案整理展示</span>
+            <span class="hero-title-bottom">店铺装修、详情页包装、主图海报与 AI 视觉提案整理展示</span>
           </h1>
           <p class="hero-subtext">
             我专注电商视觉设计 3 年，熟练使用 C4D + Redshift、Photoshop、Illustrator 和 AI 生图工作流，
@@ -1332,30 +1332,30 @@
           <div class="preview-top">
             <div>
               <div class="eyebrow">Preview</div>
-              <strong>精选视觉预览</strong>
+              <strong>店铺装修首屏预览</strong>
             </div>
-            <div class="preview-tag">已整理 29 张作品图</div>
+            <div class="preview-tag">主推 15 张店铺装修作品</div>
           </div>
           <div class="hero-mosaic">
             <article class="hero-mosaic-card large">
-              <img src="./assets/series-s/S_05.png" alt="S 系列预览">
+              <img src="./assets/store-decoration/shop-01.png" alt="店铺装修主视觉预览">
               <div class="mosaic-copy">
-                <span>Series S</span>
-                <strong>长图包装与详情页表达</strong>
+                <span>Store Decor</span>
+                <strong>店铺装修长图与首页氛围</strong>
               </div>
             </article>
             <article class="hero-mosaic-card">
-              <img src="./assets/numeric/9.png" alt="数字系列预览">
+              <img src="./assets/store-decoration/shop-08.png" alt="店铺装修版式预览">
               <div class="mosaic-copy">
-                <span>Numeric</span>
-                <strong>商品视觉组合</strong>
+                <span>Layout</span>
+                <strong>卖点排布与页面节奏</strong>
               </div>
             </article>
             <article class="hero-mosaic-card">
-              <img src="./assets/aigc/aigcImageGenFile - 2026-05-25T150830.431.png" alt="AIGC 系列预览">
+              <img src="./assets/store-decoration/shop-15.png" alt="店铺装修成套案例预览">
               <div class="mosaic-copy">
-                <span>AIGC</span>
-                <strong>AI 氛围探索</strong>
+                <span>Showcase</span>
+                <strong>成套装修案例展示</strong>
               </div>
             </article>
           </div>
@@ -1365,11 +1365,11 @@
       <section id="about" class="section">
         <div class="stats">
           <article class="stat glass">
-            <strong>29</strong>
+            <strong>44</strong>
             <span>已整理进页面的作品图</span>
           </article>
           <article class="stat glass">
-            <strong>3</strong>
+            <strong>4</strong>
             <span>套完整展示系列</span>
           </article>
           <article class="stat glass">
@@ -1387,7 +1387,7 @@
         <div class="section-title">
           <div class="eyebrow">Selected Works</div>
           <h2>作品展示</h2>
-          <p>以下内容按不同方向进行整理展示，包含电商长图、详情页视觉包装以及 AIGC 氛围探索，方便在面试或作品浏览时快速查看我的设计表现和项目输出。</p>
+          <p>以下内容按不同方向进行整理展示，包含店铺装修、电商长图、详情页视觉包装以及 AIGC 氛围探索，方便在面试或作品浏览时快速查看我的设计表现和项目输出。</p>
         </div>
         <div id="galleryList" class="works"></div>
       </section>
@@ -1566,6 +1566,30 @@
           "./assets/aigc/aigcImageGenFile - 2026-05-25T151926.079.png",
           "./assets/aigc/aigcImageGenFile - 2026-05-25T153053.888.png"
         ]
+      },
+      {
+        label: "Series 04",
+        title: "店铺装修",
+        description: "这一组集中展示店铺装修方向的长图页面与视觉包装，适合直接放在作品集中展示电商页面氛围、卖点排布和整体版式把控。",
+        cover: "./assets/store-decoration/shop-01.png",
+        count: 15,
+        images: [
+          "./assets/store-decoration/shop-01.png",
+          "./assets/store-decoration/shop-02.png",
+          "./assets/store-decoration/shop-03.png",
+          "./assets/store-decoration/shop-04.png",
+          "./assets/store-decoration/shop-05.png",
+          "./assets/store-decoration/shop-06.png",
+          "./assets/store-decoration/shop-07.png",
+          "./assets/store-decoration/shop-08.png",
+          "./assets/store-decoration/shop-09.png",
+          "./assets/store-decoration/shop-10.png",
+          "./assets/store-decoration/shop-11.png",
+          "./assets/store-decoration/shop-12.png",
+          "./assets/store-decoration/shop-13.png",
+          "./assets/store-decoration/shop-14.png",
+          "./assets/store-decoration/shop-15.png"
+        ]
       }
     ];
 
@@ -1627,7 +1651,20 @@
       lightboxImage.src = "";
     }
 
-    seriesData.forEach(function (series) {
+    const orderedSeriesData = seriesData
+      .slice()
+      .sort(function (a, b) {
+        if (a.title === "店铺装修") return -1;
+        if (b.title === "店铺装修") return 1;
+        return 0;
+      })
+      .map(function (series, index) {
+        return Object.assign({}, series, {
+          label: "Series " + String(index + 1).padStart(2, "0")
+        });
+      });
+
+    orderedSeriesData.forEach(function (series) {
       galleryList.appendChild(createSeriesCard(series));
     });
 
