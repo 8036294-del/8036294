@@ -1392,36 +1392,7 @@
         <div id="galleryList" class="works"></div>
       </section>
 
-      <section class="section">
-        <div class="section-title">
-          <div class="eyebrow">Video Showcase</div>
-          <h2>视频展示</h2>
-          <p>视频内容单独作为一个版块展示，更适合在面试时作为动态补充案例进行讲解，也能和静态长图区分开来。</p>
-        </div>
-        <div class="video-section">
-          <article class="extra-panel glass">
-            <div class="video-stage">
-              <div class="video-frame">
-                <div class="video-card">
-                  <video controls preload="metadata" autoplay muted loop playsinline poster="./assets/series-3/b7e263941ebc0e6a08fdd96f0ef6061d.jpg">
-                    <source src="./assets/series-3/20260601-172419.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-              <div class="video-side-note">
-                <div class="eyebrow">Motion Preview</div>
-                <h3>独立视频案例展示</h3>
-                <p>这里单独展示视频内容，不再和长图混排。面试时可以直接播放，用来补充页面之外的动态节奏、产品呈现方式和视觉表达效果。</p>
-                <div class="meta-row">
-                  <span class="meta-chip">独立视频展示</span>
-                  <span class="meta-chip">适合面试讲解</span>
-                  <span class="meta-chip">动态补充内容</span>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
+      
 
       <section class="section">
         <div class="section-title">
@@ -1448,22 +1419,22 @@
           <div class="extra-image-grid">
             <article class="extra-image-card">
               <button type="button" data-image="./assets/series-3/4dd685b9bf2c7b0697689edf01a9867a.jpg">
-                <img src="./assets/series-3/4dd685b9bf2c7b0697689edf01a9867a.jpg" alt="补充案例长图 1" loading="lazy">
+                <img src="./assets/series-3/4dd685b9bf2c7b0697689edf01a9867a.jpg" alt="补充案例长图 1" loading="eager">
               </button>
             </article>
             <article class="extra-image-card">
               <button type="button" data-image="./assets/series-3/86b6486be128a0cdd10499477fdf100a.jpg">
-                <img src="./assets/series-3/86b6486be128a0cdd10499477fdf100a.jpg" alt="补充案例长图 2" loading="lazy">
+                <img src="./assets/series-3/86b6486be128a0cdd10499477fdf100a.jpg" alt="补充案例长图 2" loading="eager">
               </button>
             </article>
             <article class="extra-image-card">
               <button type="button" data-image="./assets/series-3/b7e263941ebc0e6a08fdd96f0ef6061d.jpg">
-                <img src="./assets/series-3/b7e263941ebc0e6a08fdd96f0ef6061d.jpg" alt="补充案例长图 3" loading="lazy">
+                <img src="./assets/series-3/b7e263941ebc0e6a08fdd96f0ef6061d.jpg" alt="补充案例长图 3" loading="eager">
               </button>
             </article>
             <article class="extra-image-card">
               <button type="button" data-image="./assets/series-3/dcb75d2eb8b49f05f2befeadbd4c8499.jpg">
-                <img src="./assets/series-3/dcb75d2eb8b49f05f2befeadbd4c8499.jpg" alt="补充案例长图 4" loading="lazy">
+                <img src="./assets/series-3/dcb75d2eb8b49f05f2befeadbd4c8499.jpg" alt="补充案例长图 4" loading="eager">
               </button>
             </article>
           </div>
@@ -1617,7 +1588,7 @@
         <div class="series-layout">
           <div class="series-hero">
             <button type="button" data-image="${series.cover}">
-              <img src="${series.cover}" alt="${series.title} 主视觉" loading="lazy">
+              <img src="${series.cover}" alt="${series.title} 主视觉" loading="eager">
             </button>
           </div>
           <div class="masonry"></div>
@@ -1630,7 +1601,7 @@
         item.className = "masonry-item";
         item.innerHTML = `
           <button type="button" data-image="${src}">
-            <img src="${src}" alt="${series.title} ${index + 1}" loading="lazy">
+            <img src="${src}" alt="${series.title} ${index + 1}" loading="eager">
           </button>
         `;
         masonry.appendChild(item);
